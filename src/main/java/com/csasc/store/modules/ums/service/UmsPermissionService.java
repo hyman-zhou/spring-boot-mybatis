@@ -16,5 +16,4 @@ import java.util.List;
  * @since 2021-01-07
  */
 public interface UmsPermissionService extends IService<UmsPermission> {
-    List<UmsPermission> getPermissionList(Long adminId);
 }

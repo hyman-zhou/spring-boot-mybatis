@@ -25,8 +25,6 @@ public class TestMybatis {
     @Autowired
     UmsAdminRoleRelationDao umsAdminRoleRelationDao;
     @Autowired
-    UmsPermissionMapper umsPermissionMapper;
-    @Autowired
     UmsAdminMapper umsAdminMapper;
     @Autowired
     UmsAdminService umsAdminService;
@@ -40,14 +38,6 @@ public class TestMybatis {
     }
 
     @Test
-    public void test02(){
-        List<UmsPermission> umsPermissions = umsPermissionMapper.selectBatchIds(Arrays.asList(1,3));
-        for (UmsPermission persion:umsPermissions
-        ) {
-            System.out.println(persion.toString());
-        }
-    }
-    @Test
     public void test03(){
         List<UmsPermission> permissionList = umsAdminRoleRelationDao.getPermissionList(3L);
         for (UmsPermission persion:permissionList
@@ -58,7 +48,7 @@ public class TestMybatis {
 
     @Test
     public void test04(){
-        //List<UmsAdmin> umsAdmins = umsAdminMapper.selectByName("test");
+//        List<UmsAdmin> umsAdmins = umsAdminService.selectByName("test");
         List<UmsAdmin> umsAdmins = umsAdminService.list();
         for (UmsAdmin admin:
              umsAdmins) {

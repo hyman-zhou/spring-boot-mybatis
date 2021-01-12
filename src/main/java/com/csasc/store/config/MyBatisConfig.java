@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * MyBatis配置类
  */
 @Configuration
-@MapperScan({"com.csasc.store.modules.*.mapper","com.csasc.store.modules.*.dao"})
+@MapperScan(basePackages = {"com.csasc.store.modules.**.mapper","com.csasc.store.modules.ums.dao"})
 public class MyBatisConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor() {

@@ -2,8 +2,6 @@ package com.csasc.store.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -43,11 +41,11 @@ public class DruidDBConfig {
     }
 
     //配置数据库工厂
-    @Bean(name = "sqpSessionFactory")
-    @ConditionalOnMissingBean(name = "sqlSessionFactory")
-    public SqlSessionFactory dbOneSessionFactory(@Qualifier("dataSource") DataSource dataSource) throws Exception{
+    @Bean(name = "mybatisSqlSessionFactory")
+    @ConditionalOnMissingBean(name = "mybatisSqlSessionFactory")
+    public MybatisSqlSessionFactoryBean dbOneSessionFactory(@Qualifier("dataSource") DataSource dataSource) throws Exception{
         final MybatisSqlSessionFactoryBean sessionFactory = new MybatisSqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        return sessionFactory.getObject();
+        return sessionFactory;
     }
 }

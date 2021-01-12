@@ -6,8 +6,6 @@ import com.csasc.store.modules.ums.service.UmsPermissionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * <p>
  * 后台用户权限表 服务实现类
@@ -18,8 +16,4 @@ import java.util.List;
  */
 @Service
 public class UmsPermissionServiceImpl extends ServiceImpl<UmsPermissionMapper, UmsPermission> implements UmsPermissionService {
-    @Override
-    public List<UmsPermission> getPermissionList(Long adminId) {
-        return baseMapper.getPermissionList(adminId);
-    }
 }
